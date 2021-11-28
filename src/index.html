@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css">
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoutubeTV | HTPC Leanback Launcher</title>
+    <style src="styles.css"></style>
+</head>
+
+<body>
+    <webview id="wv1" src="https://www.youtube.com/tv#/" class="webview-style"
+        allowpopups plugins nodeintegrationinsubframes nodeintegration></webview>
+</body>
+
 </html>
