@@ -3,6 +3,7 @@
   "productName": "youtubetv",
   "version": "1.1.1",
   "description": "YouTube on TV | HTPC Leanback Launcher",
+  "icon": "assets/icons/icon.png",
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && electron-forge start",
