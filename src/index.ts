@@ -11,13 +11,16 @@ const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
     height: 600,
     width: 800,
+    autoHideMenuBar: true // Hide Window/Browser Menu Bar
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, '../src/index.html'));
+  mainWindow.loadURL('https://www.youtube.com/tv#/',{
+    userAgent: 'Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1'
+  });
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+ // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -41,6 +44,3 @@ app.on('activate', () => {
     createWindow();
   }
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
