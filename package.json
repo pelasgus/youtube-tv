@@ -1,8 +1,8 @@
 {
   "name": "youtubetv",
   "productName": "youtubetv",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "version": "1.1.1",
+  "description": "YouTube on TV | HTPC Leanback Launcher",
   "main": "dist/index.js",
   "scripts": {
     "start": "tsc && electron-forge start",
@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": {
-    "name": "J.A.A.Tsimouris",
+    "name": "Jim A. Alexiou Tsimouris",
     "email": "jim@tsimouris.com"
   },
   "license": "MIT",
@@ -34,20 +34,24 @@
           ]
         },
         {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
+          "name": "@electron-forge/maker-flatpak",
+          "config": {
+            "options": {
+              "categories": [
+                "Video"
+              ],
+              "mimeType": [
+                "video/h264"
+              ]
+            }
+          }
         }
       ]
     }
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
-    "@electron-forge/maker-deb": "^6.0.0-beta.61",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-flatpak": "^6.0.0-beta.61",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
     "@electron-forge/maker-zip": "^6.0.0-beta.61",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
