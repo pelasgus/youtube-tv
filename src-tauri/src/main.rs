@@ -7,7 +7,7 @@ fn main() {
     tauri::Builder::default()
     .setup(|app| {
         let window = app.get_window("main").unwrap();
-        window.eval("window.location.replace('https://www.youtube.com/tv/#')");
+        window.eval("window.location.replace('https://youtube.com/tv/')");
         Ok(())
       })
       .run(tauri::generate_context!())

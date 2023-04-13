@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "youtube-tv",
-    "version": "0.0.0"
+    "version": "0.0.2"
   },
   "tauri": {
     "allowlist": {
@@ -38,12 +38,10 @@
     },
     "windows": [
       {
-        "fullscreen": false,
+        "fullscreen": true,
         "resizable": true,
-        "title": "youtube-tv",
-        "width": 800,
-        "height": 600,
-        "userAgent": "Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1"
+        "title": "Youtube TV",
+        "userAgent": "Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1"      
       }
     ]
   }
