@@ -4,3 +4,8 @@
 /src-tauri/debug
 /src-tauri/target/
 /debug/
+
+
+# Added by cargo
+
+/target
