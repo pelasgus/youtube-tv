@@ -1,35 +1,66 @@
 // main.rs
 // Author: D.A.Pelasgus
 
-fn main() -> wry::Result<()> {
-    use tao::{
-        event::{Event, StartCause, WindowEvent},
-        event_loop::{ControlFlow, EventLoop},
-        window::WindowBuilder,
-    };
-    use wry::WebViewBuilder;
+use tao::{
+    event::{Event, WindowEvent},
+    event_loop::{ControlFlow, EventLoop},
+    window::WindowBuilder,
+};
+use wry::WebViewBuilder;
 
-    let user_agent_string = "Mozilla/5.0 (SMART-TV; LINUX; Tizen 6.5) AppleWebKit/537.36 (KHTML, like Gecko) 85.0.4183.93/6.5 TV Safari/537.36".to_string();
+fn main() -> wry::Result<()> {
     let event_loop = EventLoop::new();
-    let window = WindowBuilder::new()
-        .with_title("YouTubeTV")
-        .build(&event_loop)
-        .unwrap();
-    let _webview = WebViewBuilder::new(&window)
-        .with_user_agent(&user_agent_string)
-        .with_url("https://www.youtube.com/tv#/")
+    let window = WindowBuilder::new().build(&event_loop).unwrap();
+
+    #[cfg(any(
+        target_os = "windows",
+        target_os = "macos",
+        target_os = "ios",
+        target_os = "android"
+    ))]
+    let builder = WebViewBuilder::new(&window);
+
+    #[cfg(not(any(
+        target_os = "windows",
+        target_os = "macos",
+        target_os = "ios",
+        target_os = "android"
+    )))]
+    let builder = {
+        use tao::platform::unix::WindowExtUnix;
+        use wry::WebViewBuilderExtUnix;
+        let vbox = window.default_vbox().unwrap();
+        WebViewBuilder::new_gtk(vbox)
+    };
+
+    let _webview = builder
+        .with_url("http://youtube.com/tv")
+        .with_drag_drop_handler(|e| {
+            match e {
+                wry::DragDropEvent::Enter { paths, position } => {
+                    println!("DragEnter: {position:?} {paths:?} ")
+                }
+                wry::DragDropEvent::Over { position } => println!("DragOver: {position:?} "),
+                wry::DragDropEvent::Drop { paths, position } => {
+                    println!("DragDrop: {position:?} {paths:?} ")
+                }
+                wry::DragDropEvent::Leave => println!("DragLeave"),
+                _ => {}
+            }
+
+            true
+        })
         .build()?;
 
     event_loop.run(move |event, _, control_flow| {
         *control_flow = ControlFlow::Wait;
 
-        match event {
-            Event::NewEvents(StartCause::Init) => println!("Youtube TV is now running!"),
-            Event::WindowEvent {
-                event: WindowEvent::CloseRequested,
-                ..
-            } => *control_flow = ControlFlow::Exit,
-            _ => (),
+        if let Event::WindowEvent {
+            event: WindowEvent::CloseRequested,
+            ..
+        } = event
+        {
+            *control_flow = ControlFlow::Exit
         }
     });
 }
