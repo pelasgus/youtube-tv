@@ -1,5 +1,6 @@
 # tauri.nix
 # Author: D.A.Pelasgus
+# Follows https://tauri.app/start/prerequisites/#tab-panel-1343 but on unstable.\
 
 let
   # Unstable Channel | Rolling Release
