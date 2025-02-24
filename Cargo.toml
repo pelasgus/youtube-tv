@@ -6,5 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-tao = "0.31.0"
+tao = "0.32.0"
 wry = "0.48.1"
