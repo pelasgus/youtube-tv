@@ -19,8 +19,7 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
     - run: |
         nix-shell ./etc/shells/nix/rust.nix
-        nix-shell ./etc/shells/nix/tauri.nix
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --release
     - name: Run tests
-      run: cargo test --verbose
+      run: cargo test --verbose --release
