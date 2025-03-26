@@ -14,8 +14,11 @@ let
     glib
     gdk-pixbuf
     libsoup_3
-    atkmm
     webkitgtk_4_1
+    gst_all_1.gstreamer
+    gst_all_1.gst-libav
+    gst_all_1.gst-plugins-bad
+    gst_all_1.gst-plugins-good
   ];
 in
 pkgs.mkShell {
