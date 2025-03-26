@@ -13,6 +13,7 @@ let
     trunk
     glib
     gdk-pixbuf
+    udev
     libsoup_3
     webkitgtk_4_1
     gst_all_1.gstreamer
@@ -27,5 +28,7 @@ pkgs.mkShell {
   # Ensure Rust binaries and dependencies are in the PATH
   shellHook = ''
     export PATH="$HOME/.cargo/bin:$PATH"
+    export PKG_CONFIG_PATH="${pkgs.glib}/lib/pkgconfig:$PKG_CONFIG_PATH"
+    
   '';
 }
