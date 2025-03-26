@@ -20,6 +20,6 @@ jobs:
     - run: |
         nix-shell ./etc/shells/nix/rust.nix
     - name: Build
-      run: cargo build --verbose --release
+      run: WEBKIT_DISABLE_DMABUF_RENDERER=1 cargo build --verbose --release
     - name: Run tests
       run: cargo test --verbose --release
