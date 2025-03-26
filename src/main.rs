@@ -1,6 +1,7 @@
 // main.rs
 // Author: D.A.Pelasgus
 
+use gilrs::{Button, Event as OtherEvent, Gilrs};
 use tao::{
     event::{Event, WindowEvent},
     event_loop::{ControlFlow, EventLoop},
@@ -12,6 +13,14 @@ use wry::{
 };
 
 fn main() -> wry::Result<()> {
+    let mut gilrs = Gilrs::new().unwrap();
+
+    // Iterate over all connected gamepads
+    for (_id, gamepad) in gilrs.gamepads() {
+        println!("{} is {:?}", gamepad.name(), gamepad.power_info());
+    }
+
+    let mut active_gamepad = None;
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new().build(&event_loop).unwrap();
 
@@ -19,6 +28,7 @@ fn main() -> wry::Result<()> {
     window.set_fullscreen(Some(tao::window::Fullscreen::Borderless(
         window.current_monitor(),
     )));
+
     #[cfg(not(any(
         target_os = "windows",
         target_os = "macos",
@@ -74,13 +84,24 @@ fn main() -> wry::Result<()> {
     event_loop.run(move |event, _, control_flow| {
         *control_flow = ControlFlow::Wait;
 
+        // Process gamepad input inside the event loop
+        while let Some(Event { id, event, .. }) = gilrs.next_event() {
+            println!("New event from {}: {:?}", id, event);
+            active_gamepad = Some(id);
+        }
+
+        if let Some(gamepad) = active_gamepad.map(|id| gilrs.gamepad(id)) {
+            if gamepad.is_pressed(Button::South) {
+                println!("Button South is pressed (XBox - A, PS - X)");
+            }
+        }
+
         match event {
             Event::WindowEvent {
                 event: WindowEvent::Resized(size),
                 ..
             } => {
                 let size = size.to_logical::<u32>(window.scale_factor());
-                // Update the bounds for WebView1 to be fullscreen
                 webview
                     .set_bounds(Rect {
                         position: LogicalPosition::new(0, 0).into(),
