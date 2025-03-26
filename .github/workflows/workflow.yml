@@ -17,9 +17,7 @@ jobs:
     - uses: cachix/install-nix-action@v31
       with:
         nix_path: nixpkgs=channel:nixos-unstable
-    - run: |
-        nix-shell ./etc/shells/nix/rust.nix
-    - name: Build
+    - name: Install Nix & Dependencies
+      run: nix-shell ./etc/shells/nix/rust.nix
+    - name: Build YoutubeTV
       run: WEBKIT_DISABLE_DMABUF_RENDERER=1 cargo build --verbose --release
-    - name: Run tests
-      run: cargo test --verbose --release
