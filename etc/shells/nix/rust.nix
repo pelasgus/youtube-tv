@@ -3,27 +3,31 @@
 
 let
   # Unstable Channel | Rolling Release
-  pkgs = import (fetchTarball("channel:nixpkgs-unstable")) { };
+  pkgs = import (fetchTarball("channel:nixpkgs-unstable")) { 
+    config.allowUnfree = true; # Allow unfree packages
+  };
+
   packages = with pkgs; [
-    pkg-config
-    rustc
     cargo
-    rustfmt
-    rust-analyzer
-    trunk
+    gdk-pixbuf
     glib
     glib.dev
-    gdk-pixbuf
-    udev
-    libgcc
-    libsoup_3
-    libjack2
-    libavif
-    webkitgtk_4_1
-    gst_all_1.gstreamer
     gst_all_1.gst-libav
     gst_all_1.gst-plugins-bad
     gst_all_1.gst-plugins-good
+    gst_all_1.gstreamer
+    libavif
+    libgcc
+    libjack2
+    libsoup_3
+    pkg-config
+    rust-analyzer
+    rustc
+    rustfmt
+    trunk
+    udev
+    webkitgtk_4_1
+    widevine-cdm
   ];
 in
 pkgs.mkShell {
@@ -33,6 +37,5 @@ pkgs.mkShell {
   shellHook = ''
     export PATH="$HOME/.cargo/bin:$PATH"
     export PKG_CONFIG_PATH="${pkgs.glib}/lib/pkgconfig:$PKG_CONFIG_PATH"
-    
   '';
 }
