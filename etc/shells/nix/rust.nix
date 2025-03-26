@@ -11,6 +11,7 @@ let
     rustfmt
     rust-analyzer
     trunk
+    glib
     glib.dev
     gdk-pixbuf
     udev
