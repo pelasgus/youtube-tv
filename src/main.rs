@@ -4,7 +4,7 @@
 use tao::{
     event::{Event, WindowEvent},
     event_loop::{ControlFlow, EventLoop},
-    window::{Fullscreen, WindowBuilder},
+    window::WindowBuilder,
 };
 use wry::{
     Rect, WebViewBuilder,
