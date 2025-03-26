@@ -15,7 +15,10 @@ let
     glib.dev
     gdk-pixbuf
     udev
+    libgcc
     libsoup_3
+    libjack2
+    libavif
     webkitgtk_4_1
     gst_all_1.gstreamer
     gst_all_1.gst-libav
