@@ -1,10 +1,9 @@
 [package]
 name = "youtube-tv"
 version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+edition = "2024"
 
 [dependencies]
-tao = "0.32.6"
-wry = "0.50.3"
+gtk = "0.18.2"
+tao = "0.32.8"
+wry = "0.50.5"
