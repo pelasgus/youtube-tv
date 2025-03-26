@@ -6,19 +6,14 @@ use tao::{
     event_loop::{ControlFlow, EventLoop},
     window::WindowBuilder,
 };
-use wry::WebViewBuilder;
+use wry::{
+    Rect, WebViewBuilder,
+    dpi::{LogicalPosition, LogicalSize},
+};
 
 fn main() -> wry::Result<()> {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new().build(&event_loop).unwrap();
-
-    #[cfg(any(
-        target_os = "windows",
-        target_os = "macos",
-        target_os = "ios",
-        target_os = "android"
-    ))]
-    let builder = WebViewBuilder::new(&window);
 
     #[cfg(not(any(
         target_os = "windows",
@@ -26,41 +21,73 @@ fn main() -> wry::Result<()> {
         target_os = "ios",
         target_os = "android"
     )))]
-    let builder = {
+    let fixed = {
+        use gtk::prelude::*;
         use tao::platform::unix::WindowExtUnix;
-        use wry::WebViewBuilderExtUnix;
+        let fixed = gtk::Fixed::new();
         let vbox = window.default_vbox().unwrap();
-        WebViewBuilder::new_gtk(vbox)
+        vbox.pack_start(&fixed, true, true, 0);
+        fixed.show_all();
+        fixed
     };
 
-    let _webview = builder
-        .with_url("http://youtube.com/tv")
-        .with_drag_drop_handler(|e| {
-            match e {
-                wry::DragDropEvent::Enter { paths, position } => {
-                    println!("DragEnter: {position:?} {paths:?} ")
-                }
-                wry::DragDropEvent::Over { position } => println!("DragOver: {position:?} "),
-                wry::DragDropEvent::Drop { paths, position } => {
-                    println!("DragDrop: {position:?} {paths:?} ")
-                }
-                wry::DragDropEvent::Leave => println!("DragLeave"),
-                _ => {}
-            }
+    let user_agent_string = "Mozilla/5.0 (SMART-TV; LINUX; Tizen 6.5) AppleWebKit/537.36 (KHTML, like Gecko) 85.0.4183.93/6.5 TV Safari/537.36".to_string();
 
-            true
+    let build_webview = |builder: WebViewBuilder<'_>| -> wry::Result<wry::WebView> {
+        #[cfg(any(
+            target_os = "windows",
+            target_os = "macos",
+            target_os = "ios",
+            target_os = "android"
+        ))]
+        let webview = builder.build(&window)?;
+
+        #[cfg(not(any(
+            target_os = "windows",
+            target_os = "macos",
+            target_os = "ios",
+            target_os = "android"
+        )))]
+        let webview = {
+            use wry::WebViewBuilderExtUnix;
+            builder.build_gtk(&fixed)?
+        };
+
+        Ok(webview)
+    };
+
+    let size = window.inner_size().to_logical::<u32>(window.scale_factor());
+
+    let builder = WebViewBuilder::new()
+        .with_bounds(Rect {
+            position: LogicalPosition::new(0, 0).into(),
+            size: LogicalSize::new(size.width, size.height).into(),
         })
-        .build()?;
+        .with_user_agent(&user_agent_string)
+        .with_url("https://youtube.com/tv");
+    let webview = build_webview(builder)?;
 
     event_loop.run(move |event, _, control_flow| {
         *control_flow = ControlFlow::Wait;
 
-        if let Event::WindowEvent {
-            event: WindowEvent::CloseRequested,
-            ..
-        } = event
-        {
-            *control_flow = ControlFlow::Exit
+        match event {
+            Event::WindowEvent {
+                event: WindowEvent::Resized(size),
+                ..
+            } => {
+                let size = size.to_logical::<u32>(window.scale_factor());
+                webview
+                    .set_bounds(Rect {
+                        position: LogicalPosition::new(0, 0).into(),
+                        size: LogicalSize::new(size.width, size.height).into(),
+                    })
+                    .unwrap();
+            }
+            Event::WindowEvent {
+                event: WindowEvent::CloseRequested,
+                ..
+            } => *control_flow = ControlFlow::Exit,
+            _ => {}
         }
     });
 }
