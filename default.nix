@@ -14,7 +14,7 @@ pkgs.rustPlatform.buildRustPackage {
   };
 
   meta = with pkgs.lib; {
-    description = "Youtube on TV";
+    description = "YouTube on TV | Cross-platform HTPC Leanback Launcher.";
     license = licenses.gpl3;
     maintainers = with maintainers; [D.A.Pelasgus ];
   };
