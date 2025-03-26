@@ -4,7 +4,7 @@
 use tao::{
     event::{Event, WindowEvent},
     event_loop::{ControlFlow, EventLoop},
-    window::WindowBuilder,
+    window::{Fullscreen, WindowBuilder},
 };
 use wry::{
     Rect, WebViewBuilder,
@@ -15,6 +15,10 @@ fn main() -> wry::Result<()> {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new().build(&event_loop).unwrap();
 
+    // Make the window fullscreen
+    window.set_fullscreen(Some(tao::window::Fullscreen::Borderless(
+        window.current_monitor(),
+    )));
     #[cfg(not(any(
         target_os = "windows",
         target_os = "macos",
@@ -76,6 +80,7 @@ fn main() -> wry::Result<()> {
                 ..
             } => {
                 let size = size.to_logical::<u32>(window.scale_factor());
+                // Update the bounds for WebView1 to be fullscreen
                 webview
                     .set_bounds(Rect {
                         position: LogicalPosition::new(0, 0).into(),
