@@ -7,5 +7,5 @@ edition = "2024"
 [dependencies]
 gilrs = "0.11.0"
 gtk = "0.18.2"
-tao = "0.33.0"
+tao = "0.34.1"
 wry = "0.51.2"
