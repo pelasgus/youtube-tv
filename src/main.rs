@@ -7,8 +7,8 @@ use tao::{
     window::WindowBuilder,
 };
 use wry::{
-    Rect, WebViewBuilder,
     dpi::{LogicalPosition, LogicalSize},
+    Rect, WebViewBuilder,
 };
 
 fn main() -> wry::Result<()> {
