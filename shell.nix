@@ -4,7 +4,7 @@
 let
   # Unstable Channel | Rolling Release
   pkgs = import (fetchTarball("channel:nixpkgs-unstable")) { 
-    config.allowUnfree = true; # Allow unfree packages
+    config.allowUnfree = true; 
   };
 
   packages = with pkgs; [
@@ -33,9 +33,10 @@ in
 pkgs.mkShell {
   buildInputs = packages;
 
-  # Ensure Rust binaries and dependencies are in the PATH
   shellHook = ''
     export PATH="$HOME/.cargo/bin:$PATH"
     export PKG_CONFIG_PATH="${pkgs.glib}/lib/pkgconfig:$PKG_CONFIG_PATH"
+    export GIO_MODULE_DIR="${pkgs.glib-networking}/lib/gio/modules/"
   '';
+
 }

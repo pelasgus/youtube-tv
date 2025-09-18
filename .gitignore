@@ -5,7 +5,7 @@
 /src-tauri/target/
 /debug/
 
-Cargo.lock
+# Cargo.lock
 # Added by cargo
 
 /target
