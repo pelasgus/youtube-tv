@@ -18,8 +18,8 @@ pkgs.rustPlatform.buildRustPackage {
 
   postFixup = ''
     wrapProgram $out/bin/youtube-tv \
-      --set GIO_MODULE_DIR ${pkgs.glib-networking}/lib/gio/modules
-  '';
+      --prefix GIO_EXTRA_MODULES : "${glib-networking}/lib/gio/modules"
+'';
 
   meta = with pkgs.lib; {
     description = "YouTube on TV | Cross-platform HTPC Leanback Launcher.";
