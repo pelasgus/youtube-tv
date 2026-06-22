@@ -16,15 +16,16 @@ fn main() -> wry::Result<()> {
     let window = WindowBuilder::new().build(&event_loop).unwrap();
 
     // Fullscreen Mode
-    window.set_fullscreen(Some(tao::window::Fullscreen::Borderless(
-        window.current_monitor(),
-    )));
+    // window.set_fullscreen(Some(tao::window::Fullscreen::Borderless(
+    //     window.current_monitor(),
+    // )));
+    
     // Windowed Mode; Comment Above & Un-comment below to switch
-    // let window = WindowBuilder::new()
-    //     .with_title("My App") // optional: give your window a name
-    //     .with_inner_size(tao::dpi::LogicalSize::new(1280.0, 720.0)) // optional default size
-    //     .build(&event_loop)
-    //     .unwrap();
+    let window = WindowBuilder::new()
+        .with_title("YouTube TV") // optional: give your window a name
+        .with_inner_size(tao::dpi::LogicalSize::new(1280.0, 720.0)) // optional default size
+        .build(&event_loop)
+        .unwrap();
 
     #[cfg(not(any(
         target_os = "windows",
