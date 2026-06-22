@@ -24,6 +24,7 @@
       udev
       webkitgtk_4_1
       # widevine-cdm
+      glib-networking
     ];
   in {
     packages.${arch}.default = pkgs.rustPlatform.buildRustPackage {
