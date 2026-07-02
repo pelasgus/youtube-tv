@@ -1,16 +1,25 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    devenv.url = "github:cachix/devenv";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs =
     inputs@{ flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
+      imports = [
+        inputs.devenv.flakeModule
+      ];
+      systems = nixpkgs.lib.systems.flakeExposed;
 
       perSystem =
-        { pkgs, system, ... }:
+        {
+          pkgs,
+          system,
+          config,
+          ...
+        }:
         let
           buildInputs = with pkgs; [
             cargo
@@ -51,6 +60,14 @@
             # cargoHash = pkgs.lib.fakeHash;
           };
 
+          devenv.shells.default = {
+            # https://devenv.sh/reference/options/
+            packages = [ config.packages.default ];
+
+            enterShell = ''
+              hello
+            '';
+          };
           devShells.default = pkgs.mkShell {
             inherit buildInputs;
 
