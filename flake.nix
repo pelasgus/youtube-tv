@@ -4,13 +4,11 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs =
-    inputs@{ flake-parts, nixpkgs, ... }:
+  outputs = inputs@{ flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
 
-      perSystem =
-        { pkgs, system, ... }:
+      perSystem = { pkgs, system, ... }:
         let
           buildInputs = with pkgs; [
             cargo
@@ -35,8 +33,7 @@
             # widevine-cdm
             glib-networking
           ];
-        in
-        {
+        in {
           packages.default = pkgs.rustPlatform.buildRustPackage {
             pname = "Youtube-TV";
             version = "0.1.0";
@@ -49,6 +46,18 @@
             cargoLock.lockFile = ./Cargo.lock;
 
             # cargoHash = pkgs.lib.fakeHash;
+          };
+
+          devShells.default = pkgs.mkShell {
+            inherit buildInputs;
+
+            nativeBuildInputs = with pkgs; [
+              pkg-config
+            ];
+
+            shellHook = ''
+              export RUST_SRC_PATH=${pkgs.rustPlatform.rustLibSrc}
+            '';
           };
         };
     };
