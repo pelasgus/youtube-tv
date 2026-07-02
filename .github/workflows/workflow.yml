@@ -19,5 +19,5 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
     - name: Install Nix & Dependencies
       run: nix develop
-    - name: Build YoutubeTV
+    - name: Build Youtube-TV
       run: WEBKIT_DISABLE_DMABUF_RENDERER=1 cargo build --verbose --release

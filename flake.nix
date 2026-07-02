@@ -34,6 +34,7 @@
             webkitgtk_4_1
             # widevine-cdm
             glib-networking
+            gobject-introspection
           ];
         in
         {
