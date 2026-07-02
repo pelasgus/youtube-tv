@@ -48,15 +48,7 @@
             nativeBuildInputs = [ pkgs.pkg-config ];
 
             cargoLock.lockFile = ./Cargo.lock;
-
             # cargoHash = pkgs.lib.fakeHash;
-            shellHook = ''
-              export RUST_SRC_PATH=${pkgs.rustPlatform.rustLibSrc}
-              export PATH="$HOME/.cargo/bin:$PATH"
-              export PKG_CONFIG_PATH="${pkgs.glib}/lib/pkgconfig:$PKG_CONFIG_PATH"
-              export GIO_MODULE_DIR="${pkgs.glib-networking}/lib/gio/modules/"
-            '';
-
           };
 
           devShells.default = pkgs.mkShell {
