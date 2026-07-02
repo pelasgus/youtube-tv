@@ -58,6 +58,7 @@
               pkg-config
             ];
 
+            # https://github.com/NixOS/nixpkgs/issues/64530
             shellHook = ''
               export RUST_SRC_PATH=${pkgs.rustPlatform.rustLibSrc}
               export PATH="$HOME/.cargo/bin:$PATH"
