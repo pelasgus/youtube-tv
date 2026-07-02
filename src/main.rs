@@ -13,13 +13,13 @@ use wry::{
 
 fn main() -> wry::Result<()> {
     let event_loop = EventLoop::new();
-    let window = WindowBuilder::new().build(&event_loop).unwrap();
+    let _window = WindowBuilder::new().build(&event_loop).unwrap();
 
     // Fullscreen Mode
     // window.set_fullscreen(Some(tao::window::Fullscreen::Borderless(
     //     window.current_monitor(),
     // )));
-    
+
     // Windowed Mode; Comment Above & Un-comment below to switch
     let window = WindowBuilder::new()
         .with_title("YouTube TV") // optional: give your window a name
