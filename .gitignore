@@ -5,6 +5,7 @@
 /src-tauri/target/
 /debug/
 
+.pre-commit-hooks.yaml
 todo.md
 # Added by cargo
 
