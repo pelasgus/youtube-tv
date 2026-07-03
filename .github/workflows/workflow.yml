@@ -13,11 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v7
+    - uses: actions/checkout@v5
     - uses: cachix/install-nix-action@v31
+    - uses: cachix/cachix-action@v16
       with:
+        name: devenv
         nix_path: nixpkgs=channel:nixos-unstable
-    - name: Setup Dependencies via Nix
-      run: nix develop --no-pure-eval 
-    - name: Build Youtube-TV
-      run: WEBKIT_DISABLE_DMABUF_RENDERER=1 cargo build --verbose --release
+    - name: Install devenv.sh
+      run: nix profile add nixpkgs#devenv

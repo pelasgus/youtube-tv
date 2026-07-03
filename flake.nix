@@ -32,12 +32,12 @@
           devenv.shells.default = {
             imports = [
               ./rust.nix
+              ./pkg.nix
             ];
             # https://devenv.sh/reference/options/
-
-            enterShell = ''
-              youtube-tv
-            '';
+            # enterShell = ''
+            #   youtube-tv
+            # '';
           };
         };
     };
