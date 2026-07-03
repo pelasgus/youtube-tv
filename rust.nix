@@ -6,9 +6,10 @@ in
 {
   languages.rust.enable = true;
 
-  # Include the imported package in the environment
   packages = [
+    # Include the imported package in the environment
     youtube-tv
+    # Deps
     pkgs.gst_all_1.gst-libav
     pkgs.gst_all_1.gst-plugins-bad
     pkgs.gst_all_1.gst-plugins-good
