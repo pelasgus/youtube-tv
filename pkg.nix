@@ -12,7 +12,7 @@ in
     pkgs.gst_all_1.gst-plugins-good
     pkgs.gst_all_1.gstreamer
     pkgs.gst_all_1.gst-plugins-base
-    # pkgs.widevine-cdm
+    pkgs.widevine-cdm
     pkgs.gdk-pixbuf
     pkgs.glib.dev
     pkgs.libavif

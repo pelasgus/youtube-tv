@@ -12,7 +12,6 @@
         inputs.devenv.flakeModule
       ];
       systems = nixpkgs.lib.systems.flakeExposed;
-
       perSystem =
         {
           config,
@@ -23,11 +22,15 @@
           ...
         }:
         {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            config = {
+              allowUnfree = true;
+            };
+          };
           # Per-system attributes can be defined here. The self' and inputs'
           # module parameters provide easy access to attributes of the same
           # system.
-          # packages.default = youtube-tv;
-
           # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
           devenv.shells.default = {
             imports = [
