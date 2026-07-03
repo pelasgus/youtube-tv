@@ -13,6 +13,7 @@ in
     pkgs.gst_all_1.gst-plugins-bad
     pkgs.gst_all_1.gst-plugins-good
     pkgs.gst_all_1.gstreamer
+    pkgs.gst_all_1.gst-plugins-base
     # pkgs.widevine-cdm
     pkgs.gdk-pixbuf
     pkgs.glib.dev
@@ -31,7 +32,7 @@ in
   outputs = {
     inherit youtube-tv;
   };
-
+  env.GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
   git-hooks.hooks = {
     rustfmt.enable = true;
     clippy.enable = true;

@@ -1,10 +1,10 @@
-2026-07-03T13:28:06.602323Z DEBUG prek: 0.3.11
-2026-07-03T13:28:06.602361Z DEBUG Args: ["/nix/store/6mhbmxx3spgizfbfpnqqnjwgi44xk1x4-prek-0.3.11/bin/prek", "install", "-c", "/home/pelasgus/Documents/Repositories/dev/dev/dev/youtube-tv/.pre-commit-config.yaml", "-t", "pre-commit"]
-2026-07-03T13:28:06.602606Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --includes --null --get core.hooksPath`
-2026-07-03T13:28:06.604464Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --get core.sharedRepository`
-2026-07-03T13:28:06.607574Z TRACE get_root: close time.busy=1.46ms time.idle=3.98µs
-2026-07-03T13:28:06.607615Z DEBUG Git root: /home/pelasgus/Documents/Repositories/dev/dev/dev/youtube-tv
-2026-07-03T13:28:06.607624Z DEBUG Loading project configuration path=.pre-commit-config.yaml
-2026-07-03T13:28:06.608225Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git rev-parse --git-path hooks`
-2026-07-03T13:28:06.609776Z TRACE Include selectors: ``
-2026-07-03T13:28:06.609792Z TRACE Skip selectors: ``
+2026-07-03T17:20:16.128249Z DEBUG prek: 0.3.11
+2026-07-03T17:20:16.128310Z DEBUG Args: ["/nix/store/6mhbmxx3spgizfbfpnqqnjwgi44xk1x4-prek-0.3.11/bin/prek", "install", "-c", "/home/pelasgus/Documents/Repositories/dev/dev/dev/youtube-tv/.pre-commit-config.yaml", "-t", "pre-commit"]
+2026-07-03T17:20:16.128728Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --includes --null --get core.hooksPath`
+2026-07-03T17:20:16.130988Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --get core.sharedRepository`
+2026-07-03T17:20:16.136604Z TRACE get_root: close time.busy=2.89ms time.idle=5.60µs
+2026-07-03T17:20:16.136643Z DEBUG Git root: /home/pelasgus/Documents/Repositories/dev/dev/dev/youtube-tv
+2026-07-03T17:20:16.136653Z DEBUG Loading project configuration path=.pre-commit-config.yaml
+2026-07-03T17:20:16.137653Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git rev-parse --git-path hooks`
+2026-07-03T17:20:16.141127Z TRACE Include selectors: ``
+2026-07-03T17:20:16.141169Z TRACE Skip selectors: ``
