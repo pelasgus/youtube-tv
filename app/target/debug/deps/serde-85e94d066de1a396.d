@@ -1,0 +1,14 @@
+/home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/deps/serde-85e94d066de1a396.d: /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/lib.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/integer128.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/mod.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/de.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/ser.rs /home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/build/serde-2f6768e1c5dfe751/out/private.rs
+
+/home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/deps/libserde-85e94d066de1a396.rlib: /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/lib.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/integer128.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/mod.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/de.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/ser.rs /home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/build/serde-2f6768e1c5dfe751/out/private.rs
+
+/home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/deps/libserde-85e94d066de1a396.rmeta: /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/lib.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/integer128.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/mod.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/de.rs /home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/ser.rs /home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/build/serde-2f6768e1c5dfe751/out/private.rs
+
+/home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/lib.rs:
+/home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/integer128.rs:
+/home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/mod.rs:
+/home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/de.rs:
+/home/pelasgus/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.225/src/private/ser.rs:
+/home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/build/serde-2f6768e1c5dfe751/out/private.rs:
+
+# env-dep:OUT_DIR=/home/pelasgus/Documents/Repositories/test/youtube-tv/app/target/debug/build/serde-2f6768e1c5dfe751/out
