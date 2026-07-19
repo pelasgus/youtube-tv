@@ -1,10 +1,10 @@
-2026-07-19T11:42:40.805696Z DEBUG prek: 0.3.11
-2026-07-19T11:42:40.805713Z DEBUG Args: ["/nix/store/6mhbmxx3spgizfbfpnqqnjwgi44xk1x4-prek-0.3.11/bin/prek", "install", "-c", "/home/pelasgus/Documents/Repositories/test/youtube-tv/.pre-commit-config.yaml", "-t", "pre-commit"]
-2026-07-19T11:42:40.805855Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --includes --null --get core.hooksPath`
-2026-07-19T11:42:40.806676Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --get core.sharedRepository`
-2026-07-19T11:42:40.808081Z TRACE get_root: close time.busy=682µs time.idle=1.85µs
-2026-07-19T11:42:40.808094Z DEBUG Git root: /home/pelasgus/Documents/Repositories/test/youtube-tv
-2026-07-19T11:42:40.808097Z DEBUG Loading project configuration path=.pre-commit-config.yaml
-2026-07-19T11:42:40.808386Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git rev-parse --git-path hooks`
-2026-07-19T11:42:40.809045Z TRACE Include selectors: ``
-2026-07-19T11:42:40.809051Z TRACE Skip selectors: ``
+2026-07-19T12:19:11.017932Z DEBUG prek: 0.3.11
+2026-07-19T12:19:11.017949Z DEBUG Args: ["/nix/store/6mhbmxx3spgizfbfpnqqnjwgi44xk1x4-prek-0.3.11/bin/prek", "install", "-c", "/home/pelasgus/Documents/Repositories/test/youtube-tv/.pre-commit-config.yaml", "-t", "pre-commit"]
+2026-07-19T12:19:11.018088Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --includes --null --get core.hooksPath`
+2026-07-19T12:19:11.018887Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --get core.sharedRepository`
+2026-07-19T12:19:11.020381Z TRACE get_root: close time.busy=705µs time.idle=1.95µs
+2026-07-19T12:19:11.020395Z DEBUG Git root: /home/pelasgus/Documents/Repositories/test/youtube-tv
+2026-07-19T12:19:11.020399Z DEBUG Loading project configuration path=.pre-commit-config.yaml
+2026-07-19T12:19:11.020691Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git rev-parse --git-path hooks`
+2026-07-19T12:19:11.021360Z TRACE Include selectors: ``
+2026-07-19T12:19:11.021366Z TRACE Skip selectors: ``
