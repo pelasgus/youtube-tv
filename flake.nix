@@ -34,7 +34,7 @@
           # Equivalent to  inputs'.nixpkgs.legacyPackages.hello;
           devenv.shells.default = {
             imports = [
-              ./rust.nix
+              ./app/rust.nix
               ./pkg.nix
             ];
             # https://devenv.sh/reference/options/
