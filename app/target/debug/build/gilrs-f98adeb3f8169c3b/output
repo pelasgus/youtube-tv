@@ -1,3 +1,0 @@
-cargo:rustc-check-cfg=cfg(path_separator, values("slash","backslash"))
-cargo:rustc-cfg=path_separator="slash"
-cargo:rerun-if-changed=SDL_GameControllerDB/gamecontrollerdb.txt
