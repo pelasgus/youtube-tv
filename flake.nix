@@ -39,6 +39,7 @@
             ];
             # https://devenv.sh/reference/options/
             enterShell = ''
+                      export XDG_DATA_DIRS="$GSETTINGS_SCHEMAS_PATH"
               youtube-tv
             '';
           };

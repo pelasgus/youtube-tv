@@ -75,19 +75,19 @@ fn main() -> wry::Result<()> {
         .with_user_agent(&user_agent_string)
 
         // Disable right-click context menu
-        .with_initialization_script(
-            r#"
-            document.addEventListener('contextmenu', function(event) {
-                event.preventDefault();
-            }, true);
+        // .with_initialization_script(
+        //     r#"
+        //     document.addEventListener('contextmenu', function(event) {
+        //         event.preventDefault();
+        //     }, true);
 
-            document.addEventListener('mousedown', function(event) {
-                if (event.button === 2) {
-                    event.preventDefault();
-                }
-            }, true);
-            "#
-        )
+        //     document.addEventListener('mousedown', function(event) {
+        //         if (event.button === 2) {
+        //             event.preventDefault();
+        //         }
+        //     }, true);
+        //     "#
+        // )
 
         .with_url("https://youtube.com/tv/");
 
