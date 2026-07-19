@@ -17,6 +17,7 @@ fn main() -> wry::Result<()> {
         .with_title("YouTube TV")
         .with_inner_size(tao::dpi::LogicalSize::new(1280.0, 720.0))
         .with_decorations(false)
+        .with_resizable(true)
         .build(&event_loop)
         .unwrap();
 

@@ -38,6 +38,8 @@
               ./pkg.nix
             ];
             # https://devenv.sh/reference/options/
+            # export GST_PLUGIN_SYSTEM_PATH_1_0="${pkgs.gst_all_1.gstreamer.out}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-base}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-good}/lib/gstreamer-1.0"
+
             enterShell = ''
               export XDG_DATA_DIRS="$GSETTINGS_SCHEMAS_PATH"
               youtube-tv

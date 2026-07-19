@@ -1,10 +1,10 @@
-2026-07-19T12:27:34.563308Z DEBUG prek: 0.3.11
-2026-07-19T12:27:34.563324Z DEBUG Args: ["/nix/store/6mhbmxx3spgizfbfpnqqnjwgi44xk1x4-prek-0.3.11/bin/prek", "install", "-c", "/home/pelasgus/Documents/Repositories/test/youtube-tv/.pre-commit-config.yaml", "-t", "pre-commit"]
-2026-07-19T12:27:34.563457Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --includes --null --get core.hooksPath`
-2026-07-19T12:27:34.564218Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --get core.sharedRepository`
-2026-07-19T12:27:34.565651Z TRACE get_root: close time.busy=704µs time.idle=1.84µs
-2026-07-19T12:27:34.565665Z DEBUG Git root: /home/pelasgus/Documents/Repositories/test/youtube-tv
-2026-07-19T12:27:34.565668Z DEBUG Loading project configuration path=.pre-commit-config.yaml
-2026-07-19T12:27:34.565962Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git rev-parse --git-path hooks`
-2026-07-19T12:27:34.566637Z TRACE Include selectors: ``
-2026-07-19T12:27:34.566642Z TRACE Skip selectors: ``
+2026-07-19T13:04:38.630168Z DEBUG prek: 0.3.11
+2026-07-19T13:04:38.630184Z DEBUG Args: ["/nix/store/6mhbmxx3spgizfbfpnqqnjwgi44xk1x4-prek-0.3.11/bin/prek", "install", "-c", "/home/pelasgus/Documents/Repositories/test/youtube-tv/.pre-commit-config.yaml", "-t", "pre-commit"]
+2026-07-19T13:04:38.630315Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --includes --null --get core.hooksPath`
+2026-07-19T13:04:38.631118Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git config --get core.sharedRepository`
+2026-07-19T13:04:38.632551Z TRACE get_root: close time.busy=712µs time.idle=1.93µs
+2026-07-19T13:04:38.632565Z DEBUG Git root: /home/pelasgus/Documents/Repositories/test/youtube-tv
+2026-07-19T13:04:38.632569Z DEBUG Loading project configuration path=.pre-commit-config.yaml
+2026-07-19T13:04:38.632865Z TRACE Executing `/etc/profiles/per-user/pelasgus/bin/git rev-parse --git-path hooks`
+2026-07-19T13:04:38.633515Z TRACE Include selectors: ``
+2026-07-19T13:04:38.633520Z TRACE Skip selectors: ``
